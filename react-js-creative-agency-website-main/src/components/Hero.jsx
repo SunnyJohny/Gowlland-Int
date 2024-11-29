@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unknown-property */
 import React from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-scroll";
@@ -10,32 +9,36 @@ import "swiper/css/autoplay";
 const Hero = () => {
   const equipmentData = [
     {
-      name: "Surgical Instruments",
-      image: "/images/_DSC0120.JPG", // Replace with your image URLs
+      name: "",
+      image: "/images/_DSC0120.JPG",
     },
     {
       name: "ICU Ventilator",
-      image: "/images/icu ventilator.jpeg", // Replace with your image URLs
+      image: "/images/icu ventilator.jpeg",
+    },
+    {
+      name: "Surgical Suction Machine",
+      image: "/src/assets/Surgical Suction Machine.jpg",
     },
     {
       name: "Cataract Surgery Instrument",
-      image: "/images/Cataract Surgery Instrument.jpeg", // Replace with your image URLs
+      image: "/images/Cataract Surgery Instrument.jpeg",
     },
     {
       name: "Theater Lights",
-      image: "/images/Theater Lights.jpeg", // Replace with your image URLs
+      image: "/images/Theater Lights.jpeg",
     },
     {
       name: "Ultrasound Scanning Machine",
-      image: "/images/Ultrasound scanning machine.jpeg", // Replace with your image URLs
+      image: "/images/Ultrasound scanning machine.jpeg",
     },
     {
       name: "Stackable Job Trays",
-      image: "/images/Stackable Job Trays.jpeg", // Replace with your image URLs
+      image: "/images/Stackable Job Trays.jpeg",
     },
     {
       name: "Medical Storage Crash Cart",
-      image: "/images/Rolling Medical Storage Crash Cart with Drawers.jpeg", // Replace with your image URLs
+      image: "/images/Rolling Medical Storage Crash Cart with Drawers.jpeg",
     },
   ];
 
@@ -55,7 +58,7 @@ const Hero = () => {
         className="h-96"
       >
         {equipmentData.map((equipment, index) => (
-          <SwiperSlide key={index} className="relative">
+          <SwiperSlide key={index} className="relative group">
             {/* Image */}
             <img
               src={equipment.image}
@@ -63,11 +66,57 @@ const Hero = () => {
               className="w-full h-full object-cover"
             />
             {/* Overlay Content */}
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-white p-4">
-              <h2 className="text-2xl font-bold mb-4">{equipment.name}</h2>
-              <button className="px-6 py-2 bg-orange-500 text-white rounded hover:bg-orange-600 transition duration-300">
-                Buy Now
-              </button>
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+              {/* Add conditional styling for the first slide */}
+              <h2
+                className={`text-4xl font-extrabold mb-6 leading-tight break-words text-center ${index === 0
+                    ? "text-white font-Poppins shadow-lg mt-[-10px]" // Move "Welcome" text up
+                    : "text-[#de5c50] font-Moserate, sans-serif"
+                  } animate-drop`}
+              >
+                {/* Conditionally prepend "Welcome to ..." for the first slide */}
+                {index === 0 ? "Welcome to " : ""}
+                {equipment.name}
+              </h2>
+
+              {/* Add additional text for the first slide */}
+              {index === 0 && (
+                <div className="relative text-center">
+                  <p className="text-[20px] text-white font-extrabold mt-6 px-4 lg:px-32">
+                    Supplying Top-Quality Hospital Equipment & 
+                    <span className="text-blue-500"> Reliable </span>
+                    Medical
+                    <span className="text-blue-500">                     Consumables
+                    </span>
+                  </p>
+                  <div className="absolute inset-x-0 bottom--16 flex justify-center">
+  <a 
+    href="https://wa.me/2348034100655?text=Thanks%20for%20contacting%20us!"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <button className="px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 hover:shadow-lg transition-all duration-300">
+      Contact Us
+    </button>
+  </a>
+</div>
+
+
+
+                </div>
+
+
+
+              )}
+
+
+
+              {/* Conditionally render the button for slides other than the first */}
+              {index !== 0 && (
+                <button className="px-6 py-2 bg-yellow-500 text-white rounded-lg hover:bg-orange-600 hover:scale-105 transition-transform duration-300 shadow-md animate-slide-up">
+                  Buy Now
+                </button>
+              )}
             </div>
           </SwiperSlide>
         ))}
@@ -92,8 +141,8 @@ const Hero = () => {
           </div>
           <div className="md:w-1/2">
             <p className="cs-hero_subtitle">
-              We deliver the best problem-solving solutions for our clients and
-              provide the finest finished products for the present and future.
+              Redefining healthcare standards with world-class equipment and
+              trusted medical consumables.
             </p>
           </div>
         </div>

@@ -114,10 +114,10 @@ nav {
 }
 
 /* service cards */
-.service-cards {
-  margin: 18px auto !important;
+/* .service-cards { */
+  /* margin: 18px auto !important;
   @apply lg:w-1/4 sm:w-5/12  hover:shadow-lg bg-blend-multiply hover:shadow-orange rounded-2xl transition-all duration-300;
-}
+} */
 
 .portf h3 {
   color: #fff !important;

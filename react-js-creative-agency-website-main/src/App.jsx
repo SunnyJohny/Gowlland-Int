@@ -10,6 +10,7 @@ import Partners from "./components/Partners";
 import Portfolio from "./components/Portfolio";
 import Services from "./components/Services";
 
+
 function App() {
   return (
     <div className="bg-[#181818]">

@@ -12,6 +12,7 @@ const Hero = () => {
       name: "",
       image: "/images/_DSC0120.JPG",
     },
+    
     {
       name: "ICU Ventilator",
       image: "/images/icu ventilator.jpeg",

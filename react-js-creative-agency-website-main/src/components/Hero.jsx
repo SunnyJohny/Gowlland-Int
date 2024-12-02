@@ -21,8 +21,12 @@ const Hero = () => {
       image: "/src/assets/Surgical Suction Machine.jpg",
     },
     {
+      name: "Shelf Display",//to change the name
+      image: "src/assets/IMG-20241125-WA0037.jpg",
+    },
+    {
       name: "Cataract Surgery Instrument",
-      image: "/images/Cataract Surgery Instrument.jpeg",
+      image: "/src/assets/Cataract Surgery Instrument.jpeg",
     },
     {
       name: "Theater Lights",
@@ -33,12 +37,44 @@ const Hero = () => {
       image: "/images/Ultrasound scanning machine.jpeg",
     },
     {
-      name: "Stackable Job Trays",
-      image: "/images/Stackable Job Trays.jpeg",
+      name: "Shelf Display",//to change the name
+      image: "src/assets/IMG-20241125-WA0038.jpg",
     },
     {
       name: "Medical Storage Crash Cart",
       image: "/images/Rolling Medical Storage Crash Cart with Drawers.jpeg",
+    },
+
+
+
+
+    {
+      name: "Electric and Manual Wheelchair ",
+      image: "/images/Electric and Manual Wheelchair .jpeg",
+    },
+    {
+      name: "Laboratory Consumables",
+      image: "/images/Laboratory Consumables.jpeg",
+    },
+    {
+      name: "Surgical bed",
+      image: "/images/Surgical bed__.jpeg",
+    },
+    {
+      name: "Stainless Steel Manual Folding Wheelchair",
+      image: "/images/Stainless Steel Manual Folding Wheelchair.jpeg",
+    },
+    {
+      name: "Medical Electric Weighing Scales ",
+      image: "/images/Medical Electric Hospital Weighing Scales 150kg Weight 70~190cm.jpeg",
+    },
+    {
+      name: "Surgical bed",
+      image: "/images/Surgical bed.jpeg",
+    },
+    {
+      name: "Non Woven Surgical Disposable Products",
+      image: "/images/Non Woven Surgical Disposable Products.jpeg",
     },
   ];
 

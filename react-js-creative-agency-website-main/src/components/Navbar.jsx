@@ -17,8 +17,7 @@ const Navbar = () => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
         setIsSticky(true);
-      }
-      else{
+      } else {
         setIsSticky(false);
       }
     };
@@ -31,45 +30,66 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    {link: "Home", path: "home" },
-    {link: "About", path: "about" },
-    {link: "Services", path: "services" },
-    {link: "Portfolio", path: "portfolio" },
-    {link: "Blog", path: "blogs" },
-    {link: "Contact", path: "contact" },
+    { link: "Home", path: "home" },
+    { link: "About", path: "about" },
+    { link: "Services", path: "services" },
+    { link: "Portfolio", path: "portfolio" },
+    { link: "Blog", path: "blogs" },
+    { link: "Contact", path: "contact" },
   ];
-  return (
-    <header className="w-full  fixed top-0 left-0 right-0 transition-all ease-in duration-300">
-      <nav className={`py-4 lg:px-24 px-4 ${
-          isSticky ? "sticky top-0 left-0 right-0 bg-dark transition-all duration-300 ease-in" : "transition-all duration-300 ease-in"
-        }`}>
-        <div className="flex justify-between items-center text-base gap-8">
-          <a href="" className="text-2xl font-bold text-white"><span className="text-orange">G</span>
-          owLLand</a>
 
+  return (
+    <header className="w-full fixed top-0 left-0 right-0 transition-all ease-in duration-300">
+      <nav
+        className={`py-4 lg:px-24 px-4 ${
+          isSticky
+            ? "sticky top-0 left-0 right-0 bg-dark transition-all duration-300 ease-in"
+            : "transition-all duration-300 ease-in"
+        }`}
+      >
+        <div className="flex justify-between items-center text-base gap-8">
+          {/* Logo */}
+          <a href="/" className="flex items-center">
+            <img
+              src="/images/gowllandfigmalogo (1).png"
+              alt="Logo"
+              className="h-8 md:h-10"
+            />
+          </a>
+
+          {/* Navigation Items */}
           <ul className="md:flex space-x-12 hidden navitems">
-            
-            {
-                navItems.map(({link, path}) => <Link to={path} activeClass="active" spy={true} smooth={true} key={link} offset={-100} href={path} className="link block text-base uppercase text-white hover:text-orange">
+            {navItems.map(({ link, path }) => (
+              <Link
+                to={path}
+                activeClass="active"
+                spy={true}
+                smooth={true}
+                key={link}
+                offset={-100}
+                href={path}
+                className="link block text-base uppercase text-white hover:text-orange"
+              >
                 {link}
-              </Link> )
-            }
+              </Link>
+            ))}
           </ul>
 
+          {/* Desktop Action Button */}
           <div className="space-x-12 hidden lg:flex items-center">
             <button className="bg-transparent text-white p-2 border rounded-full">
-                <FaBarsStaggered className="w-4 hover:text-orange"/>
+              <FaBarsStaggered className="w-4 hover:text-orange" />
             </button>
           </div>
 
-          {/* menu btn, visible on mobile screen */}
+          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
               className="text-white focus:outline-none"
             >
               {isMenuOpen ? (
-                <FaXmark  className="h-6 w-6 text-primary"/>
+                <FaXmark className="h-6 w-6 text-primary" />
               ) : (
                 <FaBarsStaggered className="h-7 w-7 text-primary p-1 border rounded-full" />
               )}
@@ -77,20 +97,26 @@ const Navbar = () => {
           </div>
         </div>
 
+        {/* Mobile Menu */}
         <div
-        className={`space-y-4 px-4 mt-16 py-7 bg-[#181818] ${isMenuOpen ? "block fixed top-0 right-0 left-0" : "hidden"}`}
-      >
-        {
-                navItems.map(({link, path}) => <Link 
-                to={path} spy={true} smooth={true} offset={-90}
-                key={link} 
-                onClick={toggleMenu}
-                className="block  text-white hover:text-gray-500"
-                >
-                {link}
-              </Link> )
-            }
-      </div>
+          className={`space-y-4 px-4 mt-16 py-7 bg-[#181818] ${
+            isMenuOpen ? "block fixed top-0 right-0 left-0" : "hidden"
+          }`}
+        >
+          {navItems.map(({ link, path }) => (
+            <Link
+              to={path}
+              spy={true}
+              smooth={true}
+              offset={-90}
+              key={link}
+              onClick={toggleMenu}
+              className="block text-white hover:text-gray-500"
+            >
+              {link}
+            </Link>
+          ))}
+        </div>
       </nav>
     </header>
   );

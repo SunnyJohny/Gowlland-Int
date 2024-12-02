@@ -1,119 +1,99 @@
-import React from "react";
-import {
-  FaFacebookF,
-  FaLinkedinIn,
-  FaTwitter,
-  FaYoutube,
-} from "react-icons/fa6";
+import React from 'react';
+import { FaYoutube, FaWhatsapp, FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa';
+
+const socialMediaLinks = [
+  {
+    name: 'YouTube',
+    icon: <FaYoutube />,
+    // url: 'https://youtu.be/jUwiJsCTOlI?si=_j3zxkHA3w_aJZqM', // Replace '#' with your YouTube URL
+  },
+  {
+    name: 'WhatsApp',
+    icon: <FaWhatsapp />,
+    url: 'https://wa.me/2348034100655', // Replace '#' with your WhatsApp URL
+  },
+  {
+    name: 'Facebook',
+    icon: <FaFacebook />,
+    url: '', // Replace '#' with your Facebook URL
+  },
+  {
+    name: 'LinkedIn',
+    icon: <FaLinkedin />,
+    url: '#', // Replace '#' with your LinkedIn URL
+  },
+  {
+    name: 'Instagram',
+    icon: <FaInstagram />,
+    url: '#', // Replace '#' with your Instagram URL
+  },
+];
 
 const Footer = () => {
   return (
-    <div className="lg:px-24 px-4 text-white">
-      <div className="flex flex-col md:flex-row flex-wrap justify-between items-start gap-12">
-        <div className="space-y-4 lg:w-1/3">
-          <a href="" className="text-3xl font-bold text-white">
-            <span className="text-orange">A</span>rino
-          </a>
-          <p className=" text-gray-300">
-            Welcome to arino sed ut perspiciae omunde omnis iste natus error
-            sitort voluptatem accusantium.
-          </p>
-          <div className="flex gap-5 text-white">
-            <a
-              href="/"
-              className=" block border-2 p-3 rounded-full hover:border-orange hover:scale-110 transition-all duration-300"
-            >
-              <FaLinkedinIn className="w-5 h-5" />
-            </a>
-            <a
-              href="/"
-              className=" block border-2 p-3 rounded-full hover:border-orange hover:scale-110 transition-all duration-300"
-            >
-              <FaTwitter className="w-5 h-5" />
-            </a>
-            <a
-              href="/"
-              className=" block border-2 p-3 rounded-full hover:border-orange hover:scale-110 transition-all duration-300"
-            >
-              <FaYoutube className="w-5 h-5" />
-            </a>
-            <a
-              href=""
-              className=" block border-2 p-3 rounded-full hover:border-orange hover:scale-110 transition-all duration-300"
-            >
-              <FaFacebookF className="w-5 h-5" />
-            </a>
-          </div>
-        </div>
+    <footer className="bg-gray-800 text-white p-6">
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Contact Information */}
+          <div className="mb-8 md:mb-0">
+            <h2 className="text-xl font-bold mb-4">Contact Us</h2>
 
-        {/* Services */}
-        <div className="space-y-4">
-          <h3 className="text-2xl font-semibold">Services</h3>
-          <div className="space-y-3 text-gray-300">
-            <a href="/" className="block">
-              UI/UX design
-            </a>
-            <a href="/" className="block">
-              WP development
-            </a>
-            <a href="/" className="block">
-              Digital marketing
-            </a>
-            <a href="/" className="block">
-              React development
-            </a>
-          </div>
-        </div>
 
-        {/* contact */}
-        <div className="space-y-4">
-          <h3 className="text-2xl font-semibold">Contact Us</h3>
-          <div className="space-y-3 text-gray-300">
-            <a href="/" className="block">
-              +44 454 7800 112
-            </a>
-            <a href="/" className="block">
-              infotech@arino.com
-            </a>
-            <a href="/" className="block">
-              50 Wall Street Suite, <br /> 44150 Ohio, United States
-            </a>
+            <p>Email: ikyesega@yahoo.com.com</p>
+            <p>Phone: 08034100655,09071171137</p>
+            <p>Address: No. 1 Barracks Road Adjacent zoo view, close to St. Theresa&apos;s Cath. Church, Jos Plateau State,
+            Nigeria.</p>
           </div>
-        </div>
 
-        {/* newsletter */}
-        <div className="space-y-4 lg:w-96">
-          <h3 className="text-2xl font-semibold">Subscribe</h3>
-          <div className="space-y-3 text-gray-300">
-            <div className="relative w-full">
-              <input
-                className="newsletter_input"
-                type="email"
-                name="email"
-                id="email"
-                placeholder="example@email.com"
-              />
-              <button className="newsletter_btn">
-                <span>Send</span>
-              </button>
+          {/* Quick Links */}
+          <div className="mb-8 md:mb-0">
+            <h2 className="text-xl font-bold mb-4">Quick Links</h2>
+            <ul className="list-disc pl-4">
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/about">About Us</a>
+              </li>
+              <li>
+                <a href="/blog">Blog</a>
+              </li>
+              <li>
+                <a href="/contact">Contact</a>
+              </li>
+              <li>
+                <a href="/properties">Properties</a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Social Media */}
+          <div>
+            <h2 className="text-xl font-bold mb-4">Follow Us</h2>
+            <div className="flex space-x-4">
+              {socialMediaLinks.map((socialMedia, index) => (
+                <a
+                  key={index}
+                  href={socialMedia.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white"
+                >
+                  {socialMedia.icon}
+                </a>
+              ))}
             </div>
-            <p>
-              At vero eos et accusamus et iusto odio as part dignissimos ducimus
-              qui blandit.
-            </p>
           </div>
         </div>
       </div>
-      <div className="h-12"></div>
-      <hr className="border-gray-300" />
-      <div className="h-8"></div>
 
-      {/* copyright text */}
-      <div className="flex flex-col sm:flex-row justify-between pb-7">
-        <p>Copyright © 2022 Laralink.</p>
-        <p>Terms of Use | Privacy Policy</p>
+      {/* Bottom Bar */}
+      <div className="mt-8 border-t border-gray-600 pt-4 text-center">
+        <p className="text-sm">
+          &copy; {new Date().getFullYear()} GOWLLAND INT&apos;L LTD- RC : RC/JS/1737619. All rights reserved.
+        </p>
       </div>
-    </div>
+    </footer>
   );
 };
 
